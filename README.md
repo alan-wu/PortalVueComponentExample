@@ -1,4 +1,6 @@
 # portal-component-example
+This example showcases the use of vue components made for Data-Portal.
+
 
 ## Project setup
 ```
