@@ -1,5 +1,7 @@
 # portal-component-example
-This example showcases the use of vue components made for Data-Portal.
+This example showcases the use of vue components made for Data-Portal. A running demo can be found here: https://mapcore-demo.org/current/portal-vue/
+
+Press on the Add Model button on top of the page above to add a new scaffoldvuer. 
 
 
 ## Project setup
@@ -21,6 +23,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
