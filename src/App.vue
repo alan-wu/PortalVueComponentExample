@@ -1,28 +1,35 @@
 <template>
   <div id="app">
     <div class="top-panel">
-      <button v-if="displays.length > 0" @click="RemoveModel" class="my-button">Remove Model</button>
+      <el-button v-if="displays.length > 0" @click="RemoveModel" class="my-button" size="small">Remove Model</el-button>
       <span class="my-button">Selected: {{selected}}</span>
-      <button v-if="displays.length < 4" @click="AddModel" class="my-button">Add Model</button>
+      <el-button v-if="displays.length < 4" @click="AddModel" class="my-button" size="small">Add Model</el-button>
     </div>
-    <ScaffoldVuer v-for="item in displays" :key="item" :url="item.url" v-on:scaffold-selected="ScaffoldSelected" :ref="item.ref" style="height:50%"/>
+    
+    <el-tabs :tab-position="tabPosition" style="top:10%;height: 90%;">
+      <el-tab-pane v-for="item in displays" :key="item.ref" :label="item.ref" style="height:100%">
+        <ScaffoldVuer :url="item.url" v-on:scaffold-selected="ScaffoldSelected" :ref="item.ref" style="height:100%"/>
+      </el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script>
 /* eslint-disable no-alert, no-console */
 
-var scaffoldsArray = [ {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/stellate/stellate_metadata.json", ref:"Rat"},
-                       {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/colon/colon_metadata.json", ref:"Colon"},
-                       {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/use_case1/fitted_heart_metadata.json", ref:"Heart"},
-                       {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/lungs/lungs_metadata.json", ref:"Lungs"}];
+var scaffoldsArray = [  {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/others/a3/a3_metadata.json", ref:"a3"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/stellate/stellate_metadata.json", ref:"Stellate"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/colon/colon_metadata.json", ref:"Colon"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/use_case1/fitted_heart_metadata.json", ref:"Heart"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/lungs/lungs_metadata.json", ref:"Lungs"}];
 
 export default {
   name: 'app',
   data: function() {
     return {
-       selected: "Not Selected",
-       displays: []
+      tabPosition: 'left',
+      selected: "Not Selected",
+      displays: []
     }
   },
   methods: {
@@ -66,5 +73,9 @@ body {
 
 .my-button {
   margin:5px;
+}
+
+.el-tabs__content {
+  height:100%;
 }
 </style>
