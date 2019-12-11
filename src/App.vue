@@ -3,7 +3,7 @@
     <div class="top-panel">
       <el-button v-if="displays.length > 0" @click="RemoveModel" class="my-button" size="small">Remove Model</el-button>
       <span class="my-button">Selected: {{selected}}</span>
-      <el-button v-if="displays.length < 4" @click="AddModel" class="my-button" size="small">Add Model</el-button>
+      <el-button v-if="displays.length < scaffoldsArray.length" @click="AddModel" class="my-button" size="small">Add Model</el-button>
     </div>
     
     <el-tabs :tab-position="tabPosition" style="top:10%;height: 90%;">
@@ -29,7 +29,12 @@ export default {
     return {
       tabPosition: 'left',
       selected: "Not Selected",
-      displays: []
+      displays: [],
+      scaffoldsArray: [  {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/others/a3/a3_metadata.json", ref:"a3"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/stellate/stellate_metadata.json", ref:"Stellate"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/colon/colon_metadata.json", ref:"Colon"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/use_case1/fitted_heart_metadata.json", ref:"Heart"},
+                        {url: "https://mapcore-bucket1.s3-us-west-2.amazonaws.com/ISAN/scaffold/lungs/lungs_metadata.json", ref:"Lungs"}]
     }
   },
   methods: {
@@ -43,7 +48,7 @@ export default {
     },
     AddModel: function() {
       var currentLength = this.displays.length;
-      if (currentLength < 4)
+      if (currentLength < this.scaffoldsArray.length)
         this.displays.push(scaffoldsArray[currentLength]);
     }
   }
