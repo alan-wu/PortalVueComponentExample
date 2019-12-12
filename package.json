@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "@abi-software/scaffoldvuer": "^0.1.7",
+    "@tehsurfer/csvvuer": "0.0.4",
     "core-js": "^3.4.3",
-    "vue": "^2.6.10",
-    "element-ui": "^2.13.0"
+    "element-ui": "^2.13.0",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
