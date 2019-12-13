@@ -8,8 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@abi-software/scaffoldvuer": "^0.1.4",
+    "@abi-software/scaffoldvuer": "^0.1.7",
+    "@tehsurfer/csvvuer": "0.0.5",
     "core-js": "^3.4.3",
+    "element-ui": "^2.13.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -17,6 +19,7 @@
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
     "babel-eslint": "^10.0.3",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
