@@ -43,12 +43,12 @@ export default {
     RemoveModel: function() {
       var currentLength = this.displays.length;
       if (currentLength > 0)
-        var removed = this.displays.pop()
+        var removed = this.displays.shift()
         if (removed.type === 'scaffold'){
-          this.scaffoldsArray.push(removed)
+          this.scaffoldsArray.unshift(removed)
         }
         else if (removed.type === 'plot') {
-          this.csvFiles.push(removed)
+          this.csvFiles.unshift(removed)
         }
 
     },
@@ -57,11 +57,11 @@ export default {
     },
     AddModel: function() {
       if (this.scaffoldsArray.length)
-        this.displays.push(this.scaffoldsArray.pop());
+        this.displays.unshift(this.scaffoldsArray.shift());
     },
     AddData: function() {
       if (this.csvFiles.length)
-        this.displays.push(this.csvFiles.pop());
+        this.displays.unshift(this.csvFiles.shift());
     }
   }
 }
