@@ -57,11 +57,11 @@ export default {
     },
     AddModel: function() {
       if (this.scaffoldsArray.length)
-        this.displays.unshift(this.scaffoldsArray.shift());
+        this.displays.push(this.scaffoldsArray.shift());
     },
     AddData: function() {
       if (this.csvFiles.length)
-        this.displays.unshift(this.csvFiles.shift());
+        this.displays.push(this.csvFiles.shift());
     }
   }
 }
