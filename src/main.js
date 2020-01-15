@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import '@abi-software/flatmapvuer';
 import '@abi-software/scaffoldvuer';
 import '@abi-software/scaffoldvuer/dist/scaffoldvuer.css';
 import '@tehsurfer/csvvuer'

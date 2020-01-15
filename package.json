@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@abi-software/scaffoldvuer": "^0.1.10",
+    "@abi-software/flatmapvuer": "^0.1.0",
     "@tehsurfer/csvvuer": "0.0.5",
     "core-js": "^3.4.3",
     "element-ui": "^2.13.0",
